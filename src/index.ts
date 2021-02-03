@@ -1,3 +1,9 @@
-const greeting:string = 'Hello World';
+import rankTeams from './rank'
+import * as data from './matches.json';
 
-console.log(greeting); 
+//Get match data
+
+console.log(rankTeams(data));
+
+
+
