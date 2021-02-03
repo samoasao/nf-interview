@@ -1,0 +1,23 @@
+{
+  "name": "nf-interview",
+  "version": "1.0.0",
+  "description": "NF Coaching Developer Take-Home Skills Test",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "start": "node ./lib/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samoasao/nf-interview.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/samoasao/nf-interview/issues"
+  },
+  "homepage": "https://github.com/samoasao/nf-interview#readme",
+  "devDependencies": {}
+}
