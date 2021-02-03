@@ -13,7 +13,7 @@ I validated my output by looking over it carefully to be sure it was adding and 
 There are no node_modules to install but to run this typescript project, it must be first be built:
 
 ```
-$ cd ../nf-interview
+$ cd nf-interview
 $ npm run build
 $ npm start
 ```
