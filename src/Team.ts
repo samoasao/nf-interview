@@ -1,3 +1,4 @@
+//Stores stats for a team
 class Team {
     teamName: string;
     wins: number = 0;

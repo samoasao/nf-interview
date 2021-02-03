@@ -4,11 +4,11 @@ class Ranker {
 
     private teamDict: { [name: string]: Team } = {};
 
+    //Public method that returns a sorted array with stats for each team
     rankTeams: (data: any) => Array<any> = (data) => {
-        //Create dictionary that stores teams
+        //Create dictionary that stores team objects
         this.teamDict = {};
 
-        //Loop through data to tally scores store in dictionary
         this.fillDictionary(data);
 
         //Put values of dictionary in array
@@ -32,6 +32,8 @@ class Ranker {
         return finalResults;
     }
 
+    //A function that compares two Team objects
+    //First by points, then goal difference, then goals scored
     private compareTeams: (a: Team, b: Team) => number = (a, b) => {
         if (b.points() - a.points() != 0) {
             return b.points() - a.points();
@@ -44,6 +46,7 @@ class Ranker {
         }
     };
 
+    //Returns a sorted array of team objects
     private getRankedList: () => Array<Team> = () => {
         const rankedList: Array<Team> = [];
         for (const name in this.teamDict) {
@@ -53,7 +56,9 @@ class Ranker {
         return rankedList.sort(this.compareTeams);
 
     };
-
+  
+    //This function loops through the data to create Team objects
+    //for each team and tallies scores store in the dictionary
     private fillDictionary: (data: any) => void = (data) => {
         for (const round of data.rounds) {
             for (const match of round.matches) {
@@ -85,6 +90,8 @@ class Ranker {
         }
     }
 
+    //This function will retrieve the specified team or will create
+    //a new one if it does not yet exist.
     private getTeam: (teamName: string) => Team = (teamName) => {
         if (!this.teamDict[teamName]) {
             this.teamDict[teamName] = new Team(teamName);
