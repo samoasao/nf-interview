@@ -9,13 +9,26 @@ export const rankTeams: (data: any) => Array<any> = (data) => {
     //Loop through data to tally scores store in dictionary
     fillDictionary(data);
 
-    console.log(teamDict);
-
     //Put values of dictionary in array
-
     //Sort array using custom compare function
+    console.log(getRankedList());
+
     return ['return'];
 }
+
+const compareTeams: (a: Team, b: Team) => number = (a, b) => {
+    return b.points() - a.points();
+};
+
+const getRankedList: () => Array<Team> = () => {
+    const rankedList: Array<Team> = [];
+    for (const name in teamDict) {
+        rankedList.push(teamDict[name]);
+    }
+
+    return rankedList.sort(compareTeams);
+
+};
 
 const fillDictionary: (data: any) => void = (data) => {
     for (const round of data.rounds) {
