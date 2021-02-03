@@ -1,9 +1,11 @@
-import rankTeams from './rank'
+import Ranker from './Ranker'
 import * as data from './matches.json';
 
 //Get match data
 
-console.log(rankTeams(data));
+const ranker = new Ranker();
+
+console.log(ranker.rankTeams(data));
 
 
 
