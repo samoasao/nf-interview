@@ -10,7 +10,14 @@ This project is the take-home skills test for the coaching developer position at
 I validated my output by looking over it carefully to be sure it was adding and sorting correctly, and then just to be sure I compared it with the actual Premier league stats from 2016-2017. This was fun! Thanks for the opportunity! 
 	
 ## Setup
-There are no node_modules to install but to run this typescript project, it must be first be built:
+
+If you do not already have typescript installed first install it with the command:
+
+```
+$ npm install -g typescript
+```
+
+There are no local node_modules to install but to run this typescript project, it must be first be built:
 
 ```
 $ cd nf-interview
